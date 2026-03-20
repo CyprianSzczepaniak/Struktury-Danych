@@ -10,11 +10,11 @@ class Tab {
       void remove_anywhere(int index);
       void remove_end();
       void remove_front();
-      void find(int value);
+      int find(int value);
   private:
     int size; //size of the array
     int* array; //pointer to the array
-    int capacity; //corrent capacity of the array
+    int capacity; //current capacity of the array
     void resize();
-}
+};
 #endif

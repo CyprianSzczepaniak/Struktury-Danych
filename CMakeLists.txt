@@ -3,4 +3,4 @@ project(Projekt1_StrukturyDanych)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Projekt1_StrukturyDanych main.cpp)
+add_executable(Projekt1_StrukturyDanych main.cpp Tab.cpp Tab.hpp)
