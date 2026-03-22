@@ -1,0 +1,7 @@
+﻿################################################################################
+# Ten plik .gitignore został utworzony automatycznie przez Microsoft(R) Visual Studio.
+################################################################################
+
+/out/build/x64-Debug
+/.vs/ProjektSD/CopilotIndices/17.14.1641.39856
+/.vs/ProjektSD/FileContentIndex
