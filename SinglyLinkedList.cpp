@@ -1,6 +1,5 @@
 #include "SinglyLinkedList.hpp"
 #include <iostream>
-#include <string>
 using namespace std;
 
 // Konstruktor: Inicjalizuje pustą listę

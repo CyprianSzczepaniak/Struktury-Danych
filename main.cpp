@@ -1,5 +1,6 @@
 #include "Tab.hpp"
 #include "SinglyLinkedList.hpp"
+#include "DoublyLinkedList.hpp"
 #include <chrono>
 #include <iostream>
 #include <cstdlib>
@@ -118,7 +119,57 @@ int main() {
                 break;
             }
 
+            case 3: {
+                cout << "--- BADANIA: LISTA DWUKIERUNKOWA ---" << endl;
+                cout << "1. Dodawanie na koniec (O(1))" << endl;
+                cout << "2. Dodawanie na poczatek (O(1))" << endl;
+                cout << "3. Dodawanie gdziekolwiek (O(n))" << endl;
+                cout << "4. Usuwanie z konca (O(1) - przewaga nad jednokierunkowa!)" << endl;
+                cout << "5. Usuwanie z poczatku (O(1))" << endl;
+                cout << "6. Usuwanie gdziekolwiek (O(n))" << endl;
+                cout << "7. Wyszukiwanie elementu (O(n))" << endl;
+                cout << "8. Powrot" << endl;
+                cin >> choice2;
+
+                if (choice2 >= 1 && choice2 <= 7) {
+                    cout << "Rozmiar [N]; Sredni_Czas [ns]" << endl;
+
+                    for (int i = 0; i < 8; i++) {
+                        long long total_time = 0;
+                        int N = size_of_structure[i];
+
+                        for (int j = 0; j < iterations; j++) {
+                            DLList temp_dll; // Twoja nowa lista dwukierunkowa
+
+                            // Wypełnianie struktury - uzywamy srand(j) dla powtarzalnosci
+                            srand(j);
+                            for (int k = 0; k < N; k++) {
+                                temp_dll.add_end(rand() % 100);
+                            }
+
+                            auto start = chrono::high_resolution_clock::now();
+
+                            if (choice2 == 1) temp_dll.add_end(rand() % 100);
+                            else if (choice2 == 2) temp_dll.add_front(rand() % 100);
+                            else if (choice2 == 3) temp_dll.add_anywhere(rand() % 100, N / 2);
+                            else if (choice2 == 4) temp_dll.remove_end();
+                            else if (choice2 == 5) temp_dll.remove_front();
+                            else if (choice2 == 6) temp_dll.remove_anywhere(N / 2);
+                            else if (choice2 == 7) temp_dll.find(rand() % 100);
+
+                            auto stop = chrono::high_resolution_clock::now();
+
+                            total_time += chrono::duration_cast<chrono::nanoseconds>(stop - start).count();
+                        }
+
+                        cout << N << ";" << total_time / iterations << endl;
+                    }
+                }
+                break;
+            }
+
         }
+
     } while (choice1 != 4);
 
     return 0;

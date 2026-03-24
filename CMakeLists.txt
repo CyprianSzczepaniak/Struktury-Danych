@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(Projekt1_StrukturyDanych main.cpp Tab.cpp Tab.hpp
         SinglyLinkedList.cpp
         SinglyLinkedList.hpp
+        DoublyLinkedList.hpp
+        DoublyLinkedList.cpp
 )
