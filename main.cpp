@@ -8,7 +8,7 @@
 using namespace std;
 
 int main() {
-    int iterations = 20;
+    int iterations = 100;
     int size_of_structure[8] = {10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000};
     int choice1, choice2;
 
@@ -57,7 +57,7 @@ int main() {
                             else if (choice2 == 4) temp_tab.remove_end();
                             else if (choice2 == 5) temp_tab.remove_front();
                             else if (choice2 == 6) temp_tab.remove_anywhere(N / 2);
-                            else if (choice2 == 7) temp_tab.find(rand() % 100);
+                            else if (choice2 == 7) temp_tab.find(rand() % 200);
 
                             auto stop = chrono::high_resolution_clock::now();
 
@@ -106,7 +106,7 @@ int main() {
                             else if (choice2 == 4) temp_list.remove_end();
                             else if (choice2 == 5) temp_list.remove_front();
                             else if (choice2 == 6) temp_list.remove_anywhere(N / 2);
-                            else if (choice2 == 7) temp_list.find(rand() % 100);
+                            else if (choice2 == 7) temp_list.find(rand() % 200);
 
                             auto stop = chrono::high_resolution_clock::now();
 
@@ -155,7 +155,7 @@ int main() {
                             else if (choice2 == 4) temp_dll.remove_end();
                             else if (choice2 == 5) temp_dll.remove_front();
                             else if (choice2 == 6) temp_dll.remove_anywhere(N / 2);
-                            else if (choice2 == 7) temp_dll.find(rand() % 100);
+                            else if (choice2 == 7) temp_dll.find(rand() % 200);
 
                             auto stop = chrono::high_resolution_clock::now();
 

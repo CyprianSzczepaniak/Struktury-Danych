@@ -165,6 +165,5 @@ int SLList::find(int value) {
         current = current->next;
         index++;
     }
-    cout<<"----Element not foud----"<<endl;
     return -1;
 }
